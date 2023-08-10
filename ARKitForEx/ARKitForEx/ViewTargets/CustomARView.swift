@@ -8,6 +8,7 @@
 import SwiftUI
 import ARKit
 import RealityKit
+import Combine
 
 class CustomARView: ARView {
     
@@ -21,7 +22,25 @@ class CustomARView: ARView {
     
     convenience init() {
         self.init(frame: UIScreen.main.bounds)
-        placeCyanBox()
+        subcribeActionStream()
+    }
+    
+    // Для хранения отменияемыз подписок
+    private var cancellable: Set<AnyCancellable> = []
+    
+    // Подписка на действия
+    func subcribeActionStream() {
+        ARManager.shared
+            .actionStream
+            .sink { action in
+                switch action {
+                case .placeBox(color: let color):
+                    self.placeBox(color: color)
+                case .removeAllAnchors:
+                    self.scene.anchors.removeAll()
+                }
+            }
+            .store(in: &cancellable)
     }
     
     // Установка конфигураций юзера - его местоположения, положения лица и тела
@@ -77,14 +96,13 @@ class CustomARView: ARView {
     }
     
     // Резервация места под синий куб
-    func placeCyanBox() {
-        let box = MeshResource.generateBox(size: 0.2)
-        let sphere = MeshResource.generateSphere(radius: 0.2)
+    func placeBox(color: Color) {
+        let box = MeshResource.generateBox(size: 0.5)
 
-        let material = SimpleMaterial(color: .orange,
+        let material = SimpleMaterial(color: UIColor(color),
                                       isMetallic: true)
         
-        let entity = ModelEntity(mesh: sphere,
+        let entity = ModelEntity(mesh: box,
                                  materials: [material])
         let anchor = AnchorEntity(.plane([.horizontal],
                                          classification: [.floor],
