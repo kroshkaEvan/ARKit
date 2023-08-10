@@ -38,6 +38,8 @@ class CustomARView: ARView {
                     self.placeBox(color: color)
                 case .removeAllAnchors:
                     self.scene.anchors.removeAll()
+                case .addTiger:
+                    self.addTigerFromFile()
                 }
             }
             .store(in: &cancellable)
@@ -79,20 +81,19 @@ class CustomARView: ARView {
         scene.addAnchor(coordinateAnchor)
     }
     
-    func entityExamples() {
+    func addTigerFromFile() {
         // Загрузить объект из usdz
-        let objectU = try? Entity.load(named: "usdzFileName")
-        
-        // Загрузить объект из файла реальности
-        let objectR = try? Entity.load(named: "realityFileName")
-        
-        // Генерируем сущность с кодом
-        let box = MeshResource.generateBox(size: 1)
-        let entity = ModelEntity(mesh: box)
-        
+        let tiger = try? Entity.load(named: "tiger.rcproject 15-51-26-195.reality")
+                
         // Добавляем объект к якорю, чтобы он был помещен в сцену
         let anchor = AnchorEntity()
-        anchor.addChild(entity)
+
+        if let tiger {
+            anchor.addChild(tiger)
+        }
+        
+        scene.addAnchor(anchor)
+
     }
     
     // Резервация места под синий куб

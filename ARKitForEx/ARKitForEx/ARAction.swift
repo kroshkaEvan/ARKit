@@ -10,4 +10,5 @@ import SwiftUI
 enum ARAction {
     case placeBox(color: Color)
     case removeAllAnchors
+    case addTiger
 }

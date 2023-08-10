@@ -35,6 +35,20 @@ struct ContentView: View {
                                 .cornerRadius(10)
                         }
                         
+                        Button {
+                            ARManager.shared.actionStream.send(.addTiger)
+                        } label: {
+                            Image(systemName: "plus")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40,
+                                       height: 40,
+                                       alignment: .center)
+                                .padding()
+                                .background(.regularMaterial)
+                                .cornerRadius(10)
+                        }
+                        
                         ForEach(colors, id: \.self) { color in
                             Button {
                                 ARManager.shared.actionStream.send(.placeBox(color: color))
