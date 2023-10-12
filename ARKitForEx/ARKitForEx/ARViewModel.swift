@@ -8,16 +8,21 @@
 import SwiftUI
 import ARKit
 import RealityKit
+import Combine
 
 final class ARViewModel: ObservableObject {
     
-    @Published var arModel = ARDefaultModel(material: SimpleMaterial(color: .white,
+    var arModel = ARDefaultModel(material: SimpleMaterial(color: .white,
                                                                      roughness: .float(0),
                                                                      isMetallic: false),
                                             mesh: .box,
                                             size: 0.1,
                                             planes: .horizontal,
                                             classification: .floor)
+            
+//    init(arModel: ARDefaultModel) {
+//        self.arModel = arModel
+//    }
         
     init() {
         
@@ -31,6 +36,11 @@ final class ARViewModel: ObservableObject {
     // Удаление всех моделей ar в поле
     func removeARmodel() {
         ARManager.shared.actionStream.send(.removeAllAnchors)
+    }
+    
+    // Открытие экрана настроек
+    func openSettings() {
+        
     }
     
     // Изменение материала ar model

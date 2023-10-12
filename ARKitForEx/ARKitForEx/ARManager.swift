@@ -6,6 +6,9 @@
 //
 
 import Combine
+import ARKit
+import RealityKit
+import SwiftUI
 
 class ARManager {
     static let shared = ARManager()

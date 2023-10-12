@@ -9,10 +9,10 @@ import SwiftUI
 import ARKit
 import RealityKit
 
-enum ARAction {
+enum ARAction{
     case placeEntity(model: ARDefaultModel)
     case removeAllAnchors
-    case addTiger
+    case openSettings
 }
 
 enum MeshEntity {

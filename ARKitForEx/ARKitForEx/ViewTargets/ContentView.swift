@@ -16,34 +16,13 @@ struct ContentView: View {
             .ignoresSafeArea()
             .overlay(alignment: .bottom) {
                 ScrollView(.horizontal) {
-                    HStack {
-                        Button {
-                            arViewModel.removeARmodel()
-                        } label: {
-                            Image(systemName: "trash")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40,
-                                       height: 40,
-                                       alignment: .center)
-                                .padding()
-                                .background(.regularMaterial)
-                                .cornerRadius(10)
-                        }
-                        
-                        Button {
-                            arViewModel.placeARmodel()
-                        } label: {
-                            Image(systemName: "plus")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40,
-                                       height: 40,
-                                       alignment: .center)
-                                .padding()
-                                .background(.regularMaterial)
-                                .cornerRadius(10)
-                        }
+                    HStack(alignment: .center) {
+                        CustomARButton(action: arViewModel.placeARmodel,
+                                       imageName: "plus")
+                        CustomARButton(action: arViewModel.removeARmodel,
+                                       imageName: "trash")
+                        CustomARButton(action: arViewModel.openSettings,
+                                       imageName: "setting")
                     }
                     .padding()
                 }
@@ -51,8 +30,24 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(arViewModel: ARViewModel())
+struct CustomARButton: View {
+    var action: () -> Void
+
+    var imageName: String
+    
+    var body: some View {
+        Button {
+            self.action()
+        } label: {
+            Image(systemName: imageName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 40,
+                       height: 40,
+                       alignment: .center)
+                .padding()
+                .background(.regularMaterial)
+                .cornerRadius(10)
+        }
     }
 }
