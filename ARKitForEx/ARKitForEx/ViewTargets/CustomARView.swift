@@ -25,7 +25,7 @@ class CustomARView: ARView {
         subcribeActionStream()
     }
     
-    // Для хранения отменияемыз подписок
+    // Для хранения отменияемых подписок
     private var cancellable: Set<AnyCancellable> = []
     
     // Подписка на действия
@@ -34,8 +34,8 @@ class CustomARView: ARView {
             .actionStream
             .sink { action in
                 switch action {
-                case .placeBox(color: let color):
-                    self.placeBox(color: color)
+                case .placeEntity(model: let model):
+                    self.placeEntity(model: model)
                 case .removeAllAnchors:
                     self.scene.anchors.removeAll()
                 case .addTiger:
@@ -61,33 +61,14 @@ class CustomARView: ARView {
         let bodyTrack = ARBodyTrackingConfiguration()
     }
     
-    func anchorExamples() {
-        // Прикрепляем якоря к определенным координатам в системе координат, ориентированной на iPhone
-        let coordinateAnchor = AnchorEntity(world: .zero)
-        
-        // Прикрепляем якоря к обнаруженным плоскостям (это лучше всего работает на устройствах с датчиком LIDAR)
-        let planeAnchor = AnchorEntity(.plane([.vertical, .horizontal],
-                                              classification: [.wall, .floor, .ceiling],
-                                              minimumBounds: [1.0, 1.0]))
-        
-        // Прикрепляем якоря к отслеживаемым частям тела
-        let faceAnchor = AnchorEntity(.face) // к лицу
-        
-        // Прикрепляем к отслеживаемым изображениям привязки, такие как маркеры или визуальные коды.
-        let imageAnchor = AnchorEntity(.image(group: "group",
-                                              name: "name"))
-        
-        // Добавляем якорь в сцену
-        scene.addAnchor(coordinateAnchor)
-    }
-    
     func addTigerFromFile() {
         // Загрузить объект из usdz
         let tiger = try? Entity.load(named: "tiger.rcproject 15-51-26-195.reality")
                 
         // Добавляем объект к якорю, чтобы он был помещен в сцену
-        let anchor = AnchorEntity()
-
+        let anchor = AnchorEntity(.image(group: "AR",
+                                         name: "IMG_3755"))
+        
         if let tiger {
             anchor.addChild(tiger)
         }
@@ -96,19 +77,31 @@ class CustomARView: ARView {
 
     }
     
-    // Резервация места под синий куб
-    func placeBox(color: Color) {
-        let box = MeshResource.generateBox(size: 0.5)
-
-        let material = SimpleMaterial(color: UIColor(color),
-                                      isMetallic: true)
+    // Резервация места под требуемый предмет
+    func placeEntity(model: ARDefaultModel) {
+        var entity: ModelEntity?
         
-        let entity = ModelEntity(mesh: box,
-                                 materials: [material])
-        let anchor = AnchorEntity(.plane([.horizontal],
-                                         classification: [.floor],
-                                         minimumBounds: [1.0, 1.0]))
-        anchor.addChild(entity)
-        scene.addAnchor(anchor)
+        switch model.mesh {
+        case .box:
+            let box = MeshResource.generateBox(size: model.size)
+            entity = ModelEntity(mesh: box,
+                                 materials: [model.material])
+        case .sphere:
+            let sphere = MeshResource.generateSphere(radius: model.size)
+            entity = ModelEntity(mesh: sphere,
+                                 materials: [model.material])
+        case .text( let text):
+            let textEntity = MeshResource.generateText(text)
+            entity = ModelEntity(mesh: textEntity,
+                                 materials: [model.material])
+        }
+
+        let anchor = AnchorEntity(.plane([model.planes],
+                                         classification: model.classification,
+                                         minimumBounds: [0.1, 0.1]))
+        if let entity {
+            anchor.addChild(entity)
+            scene.addAnchor(anchor)
+        }
     }
 }

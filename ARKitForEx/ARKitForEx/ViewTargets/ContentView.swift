@@ -9,12 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var colors: [Color] = [
-        .cyan,
-        .red,
-        .blue
-    ]
-    
+    @StateObject var arViewModel: ARViewModel
+
     var body: some View {
         CustomARViewRepresentable()
             .ignoresSafeArea()
@@ -22,7 +18,7 @@ struct ContentView: View {
                 ScrollView(.horizontal) {
                     HStack {
                         Button {
-                            ARManager.shared.actionStream.send(.removeAllAnchors)
+                            arViewModel.removeARmodel()
                         } label: {
                             Image(systemName: "trash")
                                 .resizable()
@@ -36,7 +32,7 @@ struct ContentView: View {
                         }
                         
                         Button {
-                            ARManager.shared.actionStream.send(.addTiger)
+                            arViewModel.placeARmodel()
                         } label: {
                             Image(systemName: "plus")
                                 .resizable()
@@ -48,30 +44,15 @@ struct ContentView: View {
                                 .background(.regularMaterial)
                                 .cornerRadius(10)
                         }
-                        
-                        ForEach(colors, id: \.self) { color in
-                            Button {
-                                ARManager.shared.actionStream.send(.placeBox(color: color))
-                            } label: {
-                                color
-                                    .frame(width: 40,
-                                           height: 40,
-                                           alignment: .center)
-                                    .padding()
-                                    .background(.regularMaterial)
-                                    .cornerRadius(10)
-                            }
-                        }
                     }
                     .padding()
                 }
             }
-        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(arViewModel: ARViewModel())
     }
 }

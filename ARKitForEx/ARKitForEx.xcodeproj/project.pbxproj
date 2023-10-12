@@ -15,9 +15,7 @@
 		511A33392A83F8DA004D0082 /* CustomARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511A33382A83F8DA004D0082 /* CustomARViewRepresentable.swift */; };
 		511A333B2A84ED04004D0082 /* ARAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511A333A2A84ED04004D0082 /* ARAction.swift */; };
 		511A333D2A84ED45004D0082 /* ARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511A333C2A84ED45004D0082 /* ARManager.swift */; };
-		51EABFD02A850448002C1862 /* 13770_Tiger_V1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 51EABFCF2A850448002C1862 /* 13770_Tiger_V1.usdz */; };
-		51EABFD22A850F75002C1862 /* 13463_Australian_Cattle_Dog_v3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 51EABFD12A850F74002C1862 /* 13463_Australian_Cattle_Dog_v3.usdz */; };
-		51EABFD92A851501002C1862 /* tiger.rcproject 15-51-26-195.reality in Resources */ = {isa = PBXBuildFile; fileRef = 51EABFD82A851501002C1862 /* tiger.rcproject 15-51-26-195.reality */; };
+		51639ED52AD7CB78005933D6 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51639ED42AD7CB78005933D6 /* ARViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +28,7 @@
 		511A33382A83F8DA004D0082 /* CustomARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARViewRepresentable.swift; sourceTree = "<group>"; };
 		511A333A2A84ED04004D0082 /* ARAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARAction.swift; sourceTree = "<group>"; };
 		511A333C2A84ED45004D0082 /* ARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARManager.swift; sourceTree = "<group>"; };
-		51EABFCF2A850448002C1862 /* 13770_Tiger_V1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 13770_Tiger_V1.usdz; sourceTree = "<group>"; };
-		51EABFD12A850F74002C1862 /* 13463_Australian_Cattle_Dog_v3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 13463_Australian_Cattle_Dog_v3.usdz; sourceTree = "<group>"; };
-		51EABFD82A851501002C1862 /* tiger.rcproject 15-51-26-195.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tiger.rcproject 15-51-26-195.reality"; sourceTree = "<group>"; };
+		51639ED42AD7CB78005933D6 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +64,8 @@
 				511A33272A83F665004D0082 /* ARKitForExApp.swift */,
 				511A333A2A84ED04004D0082 /* ARAction.swift */,
 				511A333C2A84ED45004D0082 /* ARManager.swift */,
+				51639ED42AD7CB78005933D6 /* ARViewModel.swift */,
 				511A332B2A83F667004D0082 /* Assets.xcassets */,
-				51EABFD12A850F74002C1862 /* 13463_Australian_Cattle_Dog_v3.usdz */,
-				51EABFD82A851501002C1862 /* tiger.rcproject 15-51-26-195.reality */,
-				51EABFCF2A850448002C1862 /* 13770_Tiger_V1.usdz */,
 				511A33372A83F8B1004D0082 /* ViewTargets */,
 				511A332D2A83F667004D0082 /* Preview Content */,
 			);
@@ -154,10 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51EABFD22A850F75002C1862 /* 13463_Australian_Cattle_Dog_v3.usdz in Resources */,
 				511A332F2A83F667004D0082 /* Preview Assets.xcassets in Resources */,
-				51EABFD02A850448002C1862 /* 13770_Tiger_V1.usdz in Resources */,
-				51EABFD92A851501002C1862 /* tiger.rcproject 15-51-26-195.reality in Resources */,
 				511A332C2A83F667004D0082 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51639ED52AD7CB78005933D6 /* ARViewModel.swift in Sources */,
 				511A332A2A83F665004D0082 /* ContentView.swift in Sources */,
 				511A333B2A84ED04004D0082 /* ARAction.swift in Sources */,
 				511A33362A83F783004D0082 /* CustomARView.swift in Sources */,

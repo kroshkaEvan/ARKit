@@ -6,9 +6,25 @@
 //
 
 import SwiftUI
+import ARKit
+import RealityKit
 
 enum ARAction {
-    case placeBox(color: Color)
+    case placeEntity(model: ARDefaultModel)
     case removeAllAnchors
     case addTiger
+}
+
+enum MeshEntity {
+    case box
+    case sphere
+    case text(_ string: String)
+}
+
+struct ARDefaultModel {
+    var material: SimpleMaterial
+    var mesh: MeshEntity
+    var size: Float
+    var planes: AnchoringComponent.Target.Alignment
+    var classification: AnchoringComponent.Target.Classification
 }
