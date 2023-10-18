@@ -13,17 +13,21 @@ import Combine
 final class ARViewModel: ObservableObject {
     
     var arModel = ARDefaultModel(material: SimpleMaterial(color: .white,
-                                                                     roughness: .float(0),
-                                                                     isMetallic: false),
-                                            mesh: .box,
-                                            size: 0.1,
-                                            planes: .horizontal,
-                                            classification: .floor)
-            
-//    init(arModel: ARDefaultModel) {
-//        self.arModel = arModel
-//    }
-        
+                                                          roughness: .float(0),
+                                                          isMetallic: true),
+                                 mesh: .box,
+                                 size: 0.1,
+                                 planes: .horizontal,
+                                 classification: .floor)
+    
+    var newColor: UIColor = .white
+    var isMetallic: Bool = true
+    var roughness = Float(0)
+    
+    //    init(arModel: ARDefaultModel) {
+    //        self.arModel = arModel
+    //    }
+    
     init() {
         
     }
@@ -38,25 +42,34 @@ final class ARViewModel: ObservableObject {
         ARManager.shared.actionStream.send(.removeAllAnchors)
     }
     
-    // Открытие экрана настроек
-    func openSettings() {
-        
-    }
-    
     // Изменение материала ar model
-    func setMaterial(color: SimpleMaterial.BaseColor,
-                     metallic: Float,
-                     roughness: Float)  {
-        var material = SimpleMaterial()
-        material.color = color
-        material.roughness = .float(0)
-        material.metallic = .float(0)
-        arModel.material = material
+    func setMaterial(color: UIColor? = nil,
+                     metallic: Bool? = nil,
+                     roughness: Float? = nil)  {
+
+        if let color {
+            newColor = color
+        }
+
+        if let metallic {
+            if metallic {
+                isMetallic = true
+            } else {
+                isMetallic = false
+            }
+        }
+        arModel.material = SimpleMaterial(color: newColor, roughness: .float(roughness ?? 0), isMetallic: isMetallic)
+
     }
     
     // Изменение фигуры ar model
     func setMesh(mesh: MeshEntity)  {
         arModel.mesh = mesh
+    }
+    
+    // Изменение фигуры ar model
+    func setSize(value: Double)  {
+        arModel.size = Float(value) / 100
     }
 }
 

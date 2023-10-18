@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var arViewModel: ARViewModel
+    
+    @State var shouldShowSettings = false
 
     var body: some View {
         CustomARViewRepresentable()
@@ -21,12 +23,20 @@ struct ContentView: View {
                                        imageName: "plus")
                         CustomARButton(action: arViewModel.removeARmodel,
                                        imageName: "trash")
-                        CustomARButton(action: arViewModel.openSettings,
-                                       imageName: "setting")
+                        CustomARButton(action: openSettings,
+                                       imageName: "star.square")
                     }
                     .padding()
                 }
             }
+            .fullScreenCover(isPresented: $shouldShowSettings) {
+                SettingsView(arViewModel: arViewModel)
+            }
+    }
+    
+    // Открытие экрана настроек
+    func openSettings() {
+        shouldShowSettings.toggle()
     }
 }
 
