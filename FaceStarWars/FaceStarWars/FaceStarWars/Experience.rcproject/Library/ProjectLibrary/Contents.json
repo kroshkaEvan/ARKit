@@ -1,0 +1,47 @@
+[
+  {
+    "libraryIdentifier" : "ac2d8417c2f786f4950fe097e1263a7f",
+    "format" : "model",
+    "displayName" : "Eyeball.usdz"
+  },
+  {
+    "libraryIdentifier" : "8799a12d522370fb4d82f1c02d164acd",
+    "format" : "model",
+    "displayName" : "Glasses.usdz"
+  },
+  {
+    "libraryIdentifier" : "a843c68230b10474bf8a7961a9738807",
+    "format" : "model",
+    "displayName" : "Mustache.usdz"
+  },
+  {
+    "libraryIdentifier" : "43f906210d9f2ec1397cd49ead7e8f80",
+    "format" : "model",
+    "displayName" : "Boba_Fett_Helmet.usdz"
+  },
+  {
+    "libraryIdentifier" : "5509662ced76e9aea06d01e0273d348e",
+    "format" : "model",
+    "displayName" : "Darth_Vader_Helmet.usdz"
+  },
+  {
+    "libraryIdentifier" : "1b1ff08a3e070c436bfb4e93e1521150",
+    "format" : "model",
+    "displayName" : "Mandalorian_Helmet.usdz"
+  },
+  {
+    "libraryIdentifier" : "243749977a08fad2c05d248484c2ad17",
+    "format" : "model",
+    "displayName" : "Star_Wars_Scout_Helmet.usdz"
+  },
+  {
+    "libraryIdentifier" : "965e506049a4ac6379c75e07aa36ceb1",
+    "format" : "model",
+    "displayName" : "3D_TIE_PILOT_HELMET_-_Star_Wars_model.usdz"
+  },
+  {
+    "libraryIdentifier" : "c2859fd6ac1992597284e3fdd23deab4",
+    "format" : "model",
+    "displayName" : "Stormtrooper_Imperial_Helmet_Oscar_creativo.usdz"
+  }
+]
