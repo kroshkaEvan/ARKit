@@ -15,7 +15,8 @@ struct SettingsView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    init() {
+    init(arViewModel: ARViewModel) {
+        _arViewModel = StateObject(wrappedValue: arViewModel)
         _color = State(initialValue: Color(arViewModel.newColor))
     }
     

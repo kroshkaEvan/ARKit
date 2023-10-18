@@ -12,16 +12,17 @@ import Combine
 
 final class CustomARViewModel: ObservableObject {
     
-    var arView: ARView = ARView()
+    var arView: ARView = ARView(frame: .zero)
     
     init() {
+        subcribeActionStream()
     }
     
     // Для хранения отменияемых подписок
     private var cancellable: Set<AnyCancellable> = []
     
     // Подписка на действия
-    func subcribeActionStream(arView: ARView) {
+    func subcribeActionStream() {
         ARManager.shared
             .actionStream
             .sink { action in
@@ -29,18 +30,10 @@ final class CustomARViewModel: ObservableObject {
                 case .placeEntity(model: let model):
                     self.placeEntity(model: model)
                 case .removeAllAnchors:
-                    arView.scene.anchors.removeAll()
-                case .openSettings:
-                    self.openSettings()
+                    self.arView.scene.anchors.removeAll()
                 }
             }
             .store(in: &cancellable)
-        self.arView = arView
-    }
-
-    
-    func openSettings() {
-        
     }
     
     // Резервация места под требуемый предмет

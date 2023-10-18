@@ -12,7 +12,6 @@ import RealityKit
 enum ARAction{
     case placeEntity(model: ARDefaultModel)
     case removeAllAnchors
-    case openSettings
 }
 
 enum MeshEntity {

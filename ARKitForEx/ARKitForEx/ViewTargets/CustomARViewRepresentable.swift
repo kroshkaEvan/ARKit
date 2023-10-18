@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import RealityKit
 
 struct CustomARViewRepresentable: UIViewRepresentable {
-    func updateUIView(_ uiView: UIViewType, context: Context) {
+    
+    let viewModel = CustomARViewModel()
+    
+    func updateUIView(_ uiView: ARView, context: Context) {
     }
     
-    func makeUIView(context: Context) -> some CustomARView {
-        return CustomARView()
+    func makeUIView(context: Context) -> ARView {
+        return viewModel.arView
     }
 }

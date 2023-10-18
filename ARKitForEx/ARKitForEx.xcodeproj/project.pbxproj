@@ -11,7 +11,6 @@
 		511A332A2A83F665004D0082 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511A33292A83F665004D0082 /* ContentView.swift */; };
 		511A332C2A83F667004D0082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 511A332B2A83F667004D0082 /* Assets.xcassets */; };
 		511A332F2A83F667004D0082 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 511A332E2A83F667004D0082 /* Preview Assets.xcassets */; };
-		511A33362A83F783004D0082 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511A33352A83F783004D0082 /* CustomARView.swift */; };
 		511A33392A83F8DA004D0082 /* CustomARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511A33382A83F8DA004D0082 /* CustomARViewRepresentable.swift */; };
 		511A333B2A84ED04004D0082 /* ARAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511A333A2A84ED04004D0082 /* ARAction.swift */; };
 		511A333D2A84ED45004D0082 /* ARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511A333C2A84ED45004D0082 /* ARManager.swift */; };
@@ -26,7 +25,6 @@
 		511A33292A83F665004D0082 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		511A332B2A83F667004D0082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		511A332E2A83F667004D0082 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		511A33352A83F783004D0082 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
 		511A33382A83F8DA004D0082 /* CustomARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARViewRepresentable.swift; sourceTree = "<group>"; };
 		511A333A2A84ED04004D0082 /* ARAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARAction.swift; sourceTree = "<group>"; };
 		511A333C2A84ED45004D0082 /* ARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARManager.swift; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				511A33292A83F665004D0082 /* ContentView.swift */,
-				511A33352A83F783004D0082 /* CustomARView.swift */,
 				511A33382A83F8DA004D0082 /* CustomARViewRepresentable.swift */,
 				51639ED82AD83876005933D6 /* CustomARViewModel.swift */,
 				51CE51BC2AE007850026F2B6 /* SettingsView.swift */,
@@ -170,7 +167,6 @@
 				511A332A2A83F665004D0082 /* ContentView.swift in Sources */,
 				511A333B2A84ED04004D0082 /* ARAction.swift in Sources */,
 				51CE51BD2AE007850026F2B6 /* SettingsView.swift in Sources */,
-				511A33362A83F783004D0082 /* CustomARView.swift in Sources */,
 				51639ED92AD83876005933D6 /* CustomARViewModel.swift in Sources */,
 				511A33282A83F665004D0082 /* ARKitForExApp.swift in Sources */,
 				511A333D2A84ED45004D0082 /* ARManager.swift in Sources */,
