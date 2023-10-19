@@ -35,6 +35,8 @@ final class CustomARView: ObservableObject {
                     self.placeFootball()
                 case .addMandoModel:
                     self.placeMandoModel()
+                case .addGroguObject:
+                    self.placeObjectGrogu()
                 }
             }
             .store(in: &cancellable)
@@ -68,17 +70,24 @@ final class CustomARView: ObservableObject {
         }
     }
     
-    // Резервация места под кастомный предмет загружаемый из 
+    // Резервация места под кастомный предмет загружаемый из Experience
     func placeFootball() {
         arView.scene.anchors.removeAll()
         let arAnchor = try! Experience.loadFootball()
         arView.scene.addAnchor(arAnchor)
     }
     
-    // Резервация места под кастомный предмет загружаемый из
+    // Резервация места под кастомный предмет загружаемый из Experience
     func placeMandoModel() {
         arView.scene.anchors.removeAll()
         let arAnchor = try! Experience.loadImageMando()
+        arView.scene.addAnchor(arAnchor)
+    }
+    
+    // Резервация места под кастомный предмет загружаемый из Experience
+    func placeObjectGrogu() {
+        arView.scene.anchors.removeAll()
+        let arAnchor = try! Experience.loadObjectGrogu()
         arView.scene.addAnchor(arAnchor)
     }
 }

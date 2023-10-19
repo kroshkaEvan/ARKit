@@ -47,9 +47,14 @@ final class CustomARViewModel: ObservableObject {
         ARManager.shared.actionStream.send(.addFootballStadium)
     }
     
-    // Установка футбольного поля
+    // Установка Мандо к картинке
     func placeMandoModel() {
         ARManager.shared.actionStream.send(.addMandoModel)
+    }
+    
+    // Установка Грогу к чашке
+    func placeGroguObject() {
+        ARManager.shared.actionStream.send(.addGroguObject)
     }
     
     // Изменение материала ar model

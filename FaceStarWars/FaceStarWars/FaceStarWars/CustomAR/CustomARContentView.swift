@@ -31,6 +31,8 @@ struct CustomARContentView: View {
                                        imageName: "sportscourt")
                         FaceARButton(action: arViewModel.placeMandoModel,
                                        imageName: "Mando")
+                        CustomARButton(action: arViewModel.placeGroguObject,
+                                       imageName: "cup.and.saucer.fill")
                         CustomARButton(action: backToInitView,
                                        imageName: "arrow.uturn.backward")
                     }

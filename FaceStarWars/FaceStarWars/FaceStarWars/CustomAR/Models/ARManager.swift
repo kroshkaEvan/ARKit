@@ -26,6 +26,7 @@ enum ARAction{
     case removeAllAnchors
     case addFootballStadium
     case addMandoModel
+    case addGroguObject
 }
 
 enum MeshEntity {
