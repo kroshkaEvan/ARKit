@@ -78,5 +78,20 @@
     "libraryIdentifier" : "fe6ddb4c298bf0ba44185597ba87ae41",
     "format" : "model",
     "displayName" : "zlatan_3d_model_free_football_3D.usdz"
+  },
+  {
+    "libraryIdentifier" : "bc46023ebad8d5c25ea792d7fe5f8300",
+    "format" : "model",
+    "displayName" : "Soccer_ball.usdz"
+  },
+  {
+    "libraryIdentifier" : "ad49a26714b291f0466bf0c036b97e3e",
+    "format" : "image",
+    "displayName" : "animal.jpeg"
+  },
+  {
+    "libraryIdentifier" : "8815c3b2b3cf24bc9a074395ed2d6026",
+    "format" : "model",
+    "displayName" : "Mandalorian__The_Fortnite_Season_6_Skin_UPDATED.usdz"
   }
 ]

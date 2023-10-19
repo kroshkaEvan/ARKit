@@ -12,6 +12,13 @@
 		51639EF52ADD7607005933D6 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 51639EF42ADD7607005933D6 /* Experience.rcproject */; };
 		51639EF72ADD7609005933D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51639EF62ADD7609005933D6 /* Assets.xcassets */; };
 		51639EFA2ADD7609005933D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51639EF92ADD7609005933D6 /* Preview Assets.xcassets */; };
+		51CE51C02AE1074C0026F2B6 /* InitContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE51BF2AE1074C0026F2B6 /* InitContentView.swift */; };
+		51CE51C32AE10B1B0026F2B6 /* CustomARContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE51C22AE10B1B0026F2B6 /* CustomARContentView.swift */; };
+		51CE51C52AE10B400026F2B6 /* CustomARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE51C42AE10B400026F2B6 /* CustomARViewRepresentable.swift */; };
+		51CE51C72AE10B6B0026F2B6 /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE51C62AE10B6B0026F2B6 /* CustomARView.swift */; };
+		51CE51C92AE10BF80026F2B6 /* CustomARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE51C82AE10BF80026F2B6 /* CustomARViewModel.swift */; };
+		51CE51CC2AE10C210026F2B6 /* ARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE51CB2AE10C210026F2B6 /* ARManager.swift */; };
+		51CE51CF2AE10D440026F2B6 /* SettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE51CE2AE10D440026F2B6 /* SettingsContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +28,13 @@
 		51639EF42ADD7607005933D6 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		51639EF62ADD7609005933D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51639EF92ADD7609005933D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		51CE51BF2AE1074C0026F2B6 /* InitContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitContentView.swift; sourceTree = "<group>"; };
+		51CE51C22AE10B1B0026F2B6 /* CustomARContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARContentView.swift; sourceTree = "<group>"; };
+		51CE51C42AE10B400026F2B6 /* CustomARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARViewRepresentable.swift; sourceTree = "<group>"; };
+		51CE51C62AE10B6B0026F2B6 /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
+		51CE51C82AE10BF80026F2B6 /* CustomARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARViewModel.swift; sourceTree = "<group>"; };
+		51CE51CB2AE10C210026F2B6 /* ARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARManager.swift; sourceTree = "<group>"; };
+		51CE51CE2AE10D440026F2B6 /* SettingsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +67,11 @@
 		51639EEF2ADD7607005933D6 /* FaceStarWars */ = {
 			isa = PBXGroup;
 			children = (
-				51639EF02ADD7607005933D6 /* AppDelegate.swift */,
-				51639EF22ADD7607005933D6 /* FaceARContentView.swift */,
 				51639EF42ADD7607005933D6 /* Experience.rcproject */,
+				51639EF02ADD7607005933D6 /* AppDelegate.swift */,
+				51CE51BF2AE1074C0026F2B6 /* InitContentView.swift */,
+				51CE51C12AE10B010026F2B6 /* CustomAR */,
+				51CE51BE2AE1064E0026F2B6 /* FaceAR */,
 				51639EF62ADD7609005933D6 /* Assets.xcassets */,
 				51639EF82ADD7609005933D6 /* Preview Content */,
 			);
@@ -68,6 +84,43 @@
 				51639EF92ADD7609005933D6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		51CE51BE2AE1064E0026F2B6 /* FaceAR */ = {
+			isa = PBXGroup;
+			children = (
+				51639EF22ADD7607005933D6 /* FaceARContentView.swift */,
+			);
+			path = FaceAR;
+			sourceTree = "<group>";
+		};
+		51CE51C12AE10B010026F2B6 /* CustomAR */ = {
+			isa = PBXGroup;
+			children = (
+				51CE51C22AE10B1B0026F2B6 /* CustomARContentView.swift */,
+				51CE51C82AE10BF80026F2B6 /* CustomARViewModel.swift */,
+				51CE51CE2AE10D440026F2B6 /* SettingsContentView.swift */,
+				51CE51CD2AE10CC70026F2B6 /* ARView */,
+				51CE51CA2AE10C0A0026F2B6 /* Models */,
+			);
+			path = CustomAR;
+			sourceTree = "<group>";
+		};
+		51CE51CA2AE10C0A0026F2B6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				51CE51CB2AE10C210026F2B6 /* ARManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		51CE51CD2AE10CC70026F2B6 /* ARView */ = {
+			isa = PBXGroup;
+			children = (
+				51CE51C62AE10B6B0026F2B6 /* CustomARView.swift */,
+				51CE51C42AE10B400026F2B6 /* CustomARViewRepresentable.swift */,
+			);
+			path = ARView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +194,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				51639EF32ADD7607005933D6 /* FaceARContentView.swift in Sources */,
+				51CE51C52AE10B400026F2B6 /* CustomARViewRepresentable.swift in Sources */,
 				51639EF12ADD7607005933D6 /* AppDelegate.swift in Sources */,
+				51CE51C92AE10BF80026F2B6 /* CustomARViewModel.swift in Sources */,
+				51CE51C02AE1074C0026F2B6 /* InitContentView.swift in Sources */,
+				51CE51C72AE10B6B0026F2B6 /* CustomARView.swift in Sources */,
 				51639EF52ADD7607005933D6 /* Experience.rcproject in Sources */,
+				51CE51CC2AE10C210026F2B6 /* ARManager.swift in Sources */,
+				51CE51C32AE10B1B0026F2B6 /* CustomARContentView.swift in Sources */,
+				51CE51CF2AE10D440026F2B6 /* SettingsContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
