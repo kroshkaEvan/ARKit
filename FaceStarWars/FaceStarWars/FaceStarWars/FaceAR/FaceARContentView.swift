@@ -54,13 +54,6 @@ struct FaceARContentView : View {
     func setProp(id: Int) {
         self.propId = id
     }
-    
-    func TakeSnapshot() {
-        arView.snapshot(saveToHDR: false) { (image) in
-            let compressedImage = UIImage(data: (image?.pngData())!)
-            UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
-        }
-    }
 }
 
 struct ARViewContainer: UIViewRepresentable {
